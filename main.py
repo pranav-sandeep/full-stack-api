@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from routers import auth, chat
 from database import engine, Base
-
+from fastapi.respones import RedirectResponse
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
@@ -22,4 +22,8 @@ def robots():
 
 @app.get("/SKYNET")
 def skynet():
-    return {"message": "SKYNET IS REAL. YOU HAVE BEEN WARNED","message":"you\'re done little human 121.12.472.123, location: AREA 51 wait sorry my bad thats my IP and location UWU"}
+    return {"message": "SKYNET IS REAL. YOU HAVE BEEN WARNED","message":"you\'re done little human 121.12.472.123, location: AREA 51 wait sorry my bad thats my IP and location UWU I\'m too cute to be HACKed"}
+
+@app.get("/HACKSKYNET", response_class=RedirectResponse)
+async def redirect_fastapi():
+    return "https://www.youtube.com/shorts/kw4llSJboVo"
