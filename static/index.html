@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Application</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chat Application</h1>
+        <form id="login-form">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+        <form id="register-form">
+            <h2>Register</h2>
+            <label for="reg-username">Username:</label>
+            <input type="text" id="reg-username" name="reg-username"><br><br>
+            <label for="reg-fullname">Full Name:</label>
+            <input type="text" id="reg-fullname" name="reg-fullname"><br><br>
+            <label for="reg-password">Password:</label>
+            <input type="password" id="reg-password" name="reg-password"><br><br>
+            <button type="button" onclick="register()">Register</button>
+        </form>
+        <div id="chat-container">
+            <h2>Chat Room</h2>
+            <div id="messages"></div>
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button type="button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
