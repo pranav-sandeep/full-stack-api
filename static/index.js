@@ -43,6 +43,7 @@ async function register() {
 
 function connectWebSocket() {
     const token = localStorage.getItem('token');
+    //turn ws:// => wss:// is you get an error or can't send messages this is due to you connecting via https
     websocket = new WebSocket(`ws://${window.location.host}/ws/chat?token=${token}`);
     websocket.onmessage = function(event) {
         const messages = document.getElementById('messages');
